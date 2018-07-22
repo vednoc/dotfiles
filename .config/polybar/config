@@ -1,0 +1,126 @@
+[colors]
+background = ${xrdb:color0:#502b2c}
+foreground = ${xrdb:color15:#e0e0e0}
+accent = ${xrdb:color2:#66aa87}
+alert = ${xrdb:color1:#ff0000}
+
+[config]
+width = 100%
+height = 20
+position = false
+
+[bar/main]
+monitor = ${env:MONITOR:DVI-1}
+enable-ipc = true
+fixed-center = true
+
+wm-restack = bspwm
+override-redirect = true
+
+width = ${config.width}
+height = ${config.height}
+bottom = ${config.position}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "Iosevka:size=10;2"
+font-1 = "Wuncon Siji:size=12;2"
+
+modules-left = bspwm mpd
+modules-right = cpu s memory s volume s date s time
+# modules-center = time
+tray-position = right
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+cursor-click = pointer
+cursor-scroll = normal
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = "%name%"
+label-focused-padding = 1
+label-focused-background = ${colors.accent}
+label-focused-foreground = ${colors.foreground}
+
+label-occupied = "%name%"
+label-occupied-padding = 1
+
+label-urgent = "%name%"
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+# a trick to hide unused workspaces
+# label-empty =
+label-empty = "%name%"
+label-empty-foreground = ${colors.background}
+label-empty-padding = 1
+
+
+[module/mpd]
+type = internal/mpd
+
+format-online = <toggle> <icon-prev> <icon-stop> <icon-next> <label-song>
+
+icon-prev  = ""
+icon-stop  = ""
+icon-play  = ""
+icon-pause = ""
+icon-next  = ""
+
+label-song-maxlen = 64
+label-song-ellipsis = true
+
+
+[module/cpu]
+type = internal/cpu
+
+interval = 3
+label = "%percentage%%"
+label-padding = 1
+
+
+[module/memory]
+type = internal/memory
+
+interval = 6
+label = "%percentage_used%% "
+label-padding = 1
+
+
+[module/volume]
+type = internal/volume
+
+label-volume = " %percentage%%"
+label-muted = " %percentage%%"
+label-volume-padding = 1
+label-muted-padding = 1
+label-muted-background = ${colors.accent}
+
+
+[module/date]
+type = internal/date
+
+interval = 60
+date = %A, %B %e%
+
+label = %date%
+label-padding = 1
+
+
+[module/time]
+type = internal/date
+
+interval = 1
+time = %H:%M:%S
+
+label = %time%
+label-padding = 1
+
+
+[module/s]
+type = custom/menu
+
+label-open = ::
