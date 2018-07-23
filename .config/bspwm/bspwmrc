@@ -7,8 +7,8 @@ function get () {
   xrdb -query | grep "$1" | awk '{print $2}' | tail -n1
 }
 
-bspc config border_width 03
-bspc config window_gap 10
+bspc config border_width 02
+bspc config window_gap 00
 bspc config top_padding 20
 bspc config bottom_padding 00
 
