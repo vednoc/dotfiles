@@ -1,0 +1,17 @@
+! defaults
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.font: xft:Iosevka:size=10
+URxvt.letterSpace: -0
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.internalBorder: 8
+
+! transparency w/o pywal
+! URxvt*depth: 32
+! URxvt*background: rgba:0000/0000/0200/c800
+
+! load extensions
+URxvt.perl-ext-common: default,clipboard,resize-font
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
