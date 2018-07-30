@@ -21,8 +21,20 @@ alias senmon="watch -d -n 1 sensors"
 alias memmon="watch -d -n 1 free -m"
 alias pipesc="pipes -p 21 -r 3000 -t 6"
 alias npmtree="npm ls -g --depth=0"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias ps="ps auxf"
+alias wget="wget -c"
+alias mkdir="mkdir -pv"
 
-mcd () {
+# check memory usage of a process
+# be specific: slap process
+# everything: slap /
+function slap () {
+  ps -eo size,pid,user,command --sort -size | awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | cut -d "" -f2 | cut -d "-" -f1 | grep $1
+}
+
+# make a dir and cd into it
+function mcd () {
   mkdir -p $1
   cd $1
 }
