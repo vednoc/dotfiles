@@ -1,0 +1,8 @@
+# load rofi config from wal
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
+# my configs
+rofi.font: Iosevka, 12
+rofi.width: 50%
+rofi.columns: 3
+rofi.lines: 8
