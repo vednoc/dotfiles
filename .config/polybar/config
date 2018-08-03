@@ -27,7 +27,7 @@ font-0 = "Iosevka:size=10;2"
 font-1 = "Wuncon Siji:size=12;2"
 
 modules-left = bspwm mpd
-modules-right = cpu s memory s volume s date s time
+modules-right = cpu memory volume date time
 # modules-center = time
 tray-position = right
 
@@ -78,25 +78,25 @@ label-song-ellipsis = true
 type = internal/cpu
 
 interval = 3
-label = "%percentage%%"
-label-padding = 1
+label = "%percentage%% :"
+label-padding = 0
 
 
 [module/memory]
 type = internal/memory
 
 interval = 6
-label = "%percentage_used%% "
-label-padding = 1
+label = ": %percentage_used%% :"
+label-padding = 0
 
 
 [module/volume]
 type = internal/volume
 
-label-volume = " %percentage%%"
-label-muted = " %percentage%%"
-label-volume-padding = 1
-label-muted-padding = 1
+label-volume = ": %percentage%% :"
+label-muted = ": %percentage%% :"
+label-volume-padding = 0
+label-muted-padding = 0
 label-muted-background = ${colors.accent}
 
 
@@ -104,10 +104,10 @@ label-muted-background = ${colors.accent}
 type = internal/date
 
 interval = 60
-date = %A, %B %e%
+date = %A, %B %d
 
-label = %date%
-label-padding = 1
+label = ": %date% :"
+label-padding = 0
 
 
 [module/time]
@@ -116,11 +116,5 @@ type = internal/date
 interval = 1
 time = %H:%M:%S
 
-label = %time%
-label-padding = 1
-
-
-[module/s]
-type = custom/menu
-
-label-open = ::
+label = ": %time% ::"
+label-padding = 0
