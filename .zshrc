@@ -25,6 +25,15 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias ps="ps auxf"
 alias wget="wget -c"
 alias mkdir="mkdir -pv"
+alias wal="wal -o $HOME/bin/colors.sh -i"
+alias yt="youtube-dl --add-metadata -ic"
+alias yta="youtube-dl --add-metadata -xic"
+alias upd="sudo pacman -Sy"
+alias upg="sudo pacman -Syu"
+alias rmp="sudo pacman -Rs"
+alias fnd="pacman -Ss"
+alias pkgsys="(pacman -Qet && pacman -Qm) | sort -u"
+alias ka="killall"
 
 # check memory usage of a process
 # be specific: slap process
