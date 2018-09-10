@@ -36,10 +36,21 @@ alias pkgsys="(pacman -Qet && pacman -Qm) | sort -u"
 alias ka="killall"
 
 # check memory usage of a process
-# be specific: slap process
-# everything: slap /
+# single process: slap Xorg
+# every process: slap /
 function slap () {
-  ps -eo size,pid,user,command --sort -size | awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | cut -d "" -f2 | cut -d "-" -f1 | grep $1
+  ps -eo size,pid,user,command --sort -size | \
+  awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | \
+  cut -d "" -f2 | \
+  cut -d "-" -f1 | \
+  grep $1 | \
+  grep -v grep
+}
+
+# check core memory used per program (not per process)
+function poke () {
+  ps_mem -p $(pgrep -d, -u $USER) | \
+  grep $1
 }
 
 # make a dir and cd into it
