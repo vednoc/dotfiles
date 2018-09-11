@@ -1,6 +1,6 @@
-# focus the clicked window
-~button1
-  bspc pointer --grab focus
+# launch everyday programs
+alt + {s,v,w,n,m}
+  {emacsclient -c, vivaldi-stable, waterfox, pavucontrol, spotify}
 
 # change gaps on the fly
 super + alt + {minus, equal}
@@ -12,7 +12,7 @@ super + p
 
 # terminal emulator
 super + Return
-  urxvt
+  st
 
 # program launcher
 super + @space
@@ -21,7 +21,7 @@ super + @space
 
 # make sxhkd reload its configuration files
 super + Escape
-  pkill -USR1 -x sxhkd
+  pkill -USR1 -x sxhkd && notify-send "[sxhkd] reloaded"
 
 # quit bspwm normally
 super + alt + Escape
