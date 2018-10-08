@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/.bin:$PATH
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export EDITOR='vim'
@@ -11,9 +11,6 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git zsh-syntax-highlighting)
 
-# start powerline daemon
-powerline-daemon -q
-. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # custom aliases
 alias mergex11="xrdb .Xresources"
@@ -25,13 +22,11 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias ps="ps auxf"
 alias wget="wget -c"
 alias mkdir="mkdir -pv"
-alias wal="wal -o $HOME/bin/colors.sh -i"
+alias wal="wal -o $HOME/.bin/colors.sh"
 alias yt="youtube-dl --add-metadata -ic"
 alias yta="youtube-dl --add-metadata -xic"
-alias upd="sudo pacman -Sy"
-alias upg="sudo pacman -Syu"
-alias rmp="sudo pacman -Rs"
-alias fnd="pacman -Ss"
+alias p="sudo pacman"
+alias svim="sudo vim"
 alias pkgsys="(pacman -Qet && pacman -Qm) | sort -u"
 alias ka="killall"
 
