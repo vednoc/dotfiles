@@ -1,0 +1,25 @@
+[user]
+	email = email
+	name = name
+	# signingkey = key
+[color]
+	ui = true
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = red bold
+[alias]
+	l = log --pretty=format:'%C(yellow)%h%C(magenta)%d%C(reset) %s %C(cyan)%cN %C(blue)(%cd)%C(reset)' --date=format:'%a %F %R' --graph --use-mailmap
+	s = status -sb
