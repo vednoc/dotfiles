@@ -26,9 +26,16 @@ alias wal="wal -o $HOME/.bin/colors.sh"
 alias yt="youtube-dl --add-metadata -ic"
 alias yta="youtube-dl --add-metadata -xic"
 alias p="sudo pacman"
-alias svim="sudo vim"
+alias sv="sudo nvim"
+alias v="nvim"
+alias vd="nvim -d"
 alias pkgsys="(pacman -Qet && pacman -Qm) | sort -u"
 alias ka="killall"
+
+# for extra safety
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
 
 # check memory usage of a process
 # single process: slap Xorg
