@@ -30,7 +30,9 @@ font-1 = "Wuncon Siji:size=12;2"
 modules-left = bspwm mpd
 modules-right = eth cpu memory volume date time
 # modules-center = time
+
 tray-position = right
+tray-maxsize = 12
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -43,8 +45,8 @@ type = internal/bspwm
 
 label-focused = "%name%"
 label-focused-padding = 1
-label-focused-background = ${colors.accent}
-label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.accent}
 
 label-occupied = "%name%"
 label-occupied-padding = 1
@@ -59,6 +61,9 @@ label-empty = "%name%"
 label-empty-foreground = ${colors.background}
 label-empty-padding = 1
 
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = ${colors.background}
 
 [module/mpd]
 type = internal/mpd
@@ -80,8 +85,8 @@ type = internal/network
 
 interval = 1
 interface = ${config.network}
-label-connected = "|  %downspeed% %upspeed% "
-label-disconnected = "|  unplugged "
+label-connected = "| %downspeed% %upspeed% "
+label-disconnected = "| unplugged "
 
 
 [module/cpu]
