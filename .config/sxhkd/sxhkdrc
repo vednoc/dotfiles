@@ -1,3 +1,7 @@
+# lock the screen!
+super + alt + w
+  i3lock-next
+
 # launch everyday programs
 alt + {s,v,w,n,m}
   {emacsclient -c, vivaldi-stable, waterfox, pavucontrol, spotify}
@@ -9,6 +13,13 @@ super + alt + {minus, equal}
 # take a screenshot
 super + p
   scrot && notify-send "[scrot] screenshot taken!"
+
+# select area to screenshot
+super + shift + ctrl + p
+  maim -s \
+    | convert - \( +clone -background black -shadow 20x20+4+16 \) \
+    +swap -background none -layers merge +repage $(date +%F-%R).png \
+    && notify-send "Screenshot taken!" "NOW"
 
 # terminal emulator
 super + Return
