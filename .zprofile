@@ -5,6 +5,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 
+export ZDOTDIR=$XDG_CONFIG_HOME/sh
+
 # auto-start startx (only) on tty1;
 # start with ssh-agent so the ssh passwords persist throughout Xorg session
 if [[ "$(tty)" = "/dev/tty1" ]]; then

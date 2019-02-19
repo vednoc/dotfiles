@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
-xrdb -merge $HOME/.Xresources
+xrdb -merge $XDG_CONFIG_HOME/x/Xresources
 
 sxhkd &
 wal -R &
-$HOME/.config/polybar/launch.sh &
-compton -f --config $HOME/.config/compton/compton.conf &
+$XDG_CONFIG_HOME/.config/polybar/launch.sh &
+compton -f --config $XDG_CONFIG_HOME/.config/compton/compton.conf &
 xautolock --time 20 --locker slock &
 redshift-gtk &
 nm-applet &
