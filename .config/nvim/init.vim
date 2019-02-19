@@ -1,6 +1,5 @@
 syntax on
 
-set number
 set rnu
 set wrap
 set ruler
@@ -11,7 +10,7 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 set smarttab
+set clipboard+=unnamedplus
 
-map <C-J> <C-W>j<C-W>
-map <C-K> <C-W>k<C-W>
-set wmh=0
+inoremap jk <ESC>
+inoremap kj <ESC
