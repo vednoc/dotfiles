@@ -2,4 +2,6 @@
 
 ;; Place your private configuration here
 
-(setq doom-font (font-spec :family "Iosevka" :size 14))
+(setq display-line-numbers-type nil
+      doom-font (font-spec :family "Iosevka" :size 14)
+      doom-big-font (font-spec :family "Iosevka" :size 20))
