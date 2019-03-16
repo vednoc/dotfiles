@@ -6,6 +6,10 @@
 
 (setq display-line-numbers-type nil
       git-gutter:update-interval 1
+      org-log-done 'time
+      org-ellipsis "..."
+      org-bullets-bullet-list '("⚫" "⚪")
+      org-directory "~/doc/org"
       doom-modeline-bar-width 1
       doom-modeline-major-mode-icon t
       doom-modeline-buffer-file-name-style 'truncate-upto-root
