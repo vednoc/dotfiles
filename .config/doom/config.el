@@ -16,3 +16,6 @@
       doom-theme 'doom-sourcerer
       doom-font (font-spec :family "Iosevka" :size 14)
       doom-big-font (font-spec :family "Iosevka" :size 20))
+
+(global-unset-key (kbd "M-/"))
+(map! :nei #'evilnc-comment-or-uncomment-lines)
