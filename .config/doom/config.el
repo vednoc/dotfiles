@@ -2,6 +2,7 @@
 
 ;; Place your private configuration here
 
+(global-visual-line-mode t)
 (global-git-gutter-mode t)
 
 (setq display-line-numbers-type nil
