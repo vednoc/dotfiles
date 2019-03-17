@@ -1,8 +1,10 @@
 export PATH=$HOME/bin:/usr/local/.bin:$PATH
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
-export EDITOR='vim'
-export GIT_EDITOR='vim'
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
+export READER="zathura"
+export BROWSER="icecat"
 
 # common zsh settings
 ZSH_THEME="wedisagree"
@@ -10,7 +12,6 @@ ZSH=/usr/share/oh-my-zsh/
 DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git zsh-syntax-highlighting)
-
 
 # custom aliases
 alias mergex11="xrdb .Xresources"
@@ -26,8 +27,9 @@ alias wal="wal -o $HOME/.bin/colors.sh"
 alias yt="youtube-dl --add-metadata -ic"
 alias yta="youtube-dl --add-metadata -xic"
 alias p="sudo pacman"
-alias sv="sudo nvim"
-alias v="nvim"
+alias {e,ec}={"emacs","emacsclient -c"}
+alias s{v,vim}="sudo nvim"
+alias {v,vim}="nvim"
 alias vd="nvim -d"
 alias pkgsys="(pacman -Qet && pacman -Qm) | sort -u"
 alias ka="killall"
